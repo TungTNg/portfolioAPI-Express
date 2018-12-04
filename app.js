@@ -19,7 +19,7 @@ var investmentSchema = new mongoose.Schema({
 var Investment = mongoose.model("Investment", investmentSchema);
 
 var today = new Date();
-today.setHours(today.getHours() - 14);
+today.setHours(today.getHours() - 8);
 today = today.toISOString().split('T')[0];
     
 app.get('/', (req, res) => {
