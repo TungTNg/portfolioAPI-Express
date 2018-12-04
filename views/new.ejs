@@ -1,0 +1,32 @@
+<% include partials/header %>
+
+<div class="container">
+    <h1 class="text-center">Create a New Investment</h1>
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-3">
+            <form action="/portfolioAPI-Express/investments" method="POST">
+                <div class="form-group">
+                    <label for="company">Enter company name:</label>
+                    <input class="form-control" type="text" name="company" placeholder="company" />
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Enter investment quantity:</label>
+                    <input class="form-control" type="text" name="quantity" placeholder="quantity" />
+                </div>
+                <div class="form-group">
+                    <label for="cost">Enter investment cost:</label>
+                    <input class="form-control" type="text" name="cost" placeholder="cost" />
+                </div>
+                <div class="form-group">
+                    <label for="date">Enter investment date (default will be today):</label>
+                    <input class="form-control" type="date" name="date" placeholder="date" />
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary btn-block btn-lg" type="submit" value="Submit" />
+                </div>
+            </form>
+            <a href="/portfolioAPI-Express">Go Back</a>
+        </div>
+    </div>
+</div>
+<% include partials/footer %>

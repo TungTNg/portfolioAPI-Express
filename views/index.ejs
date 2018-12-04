@@ -1,0 +1,39 @@
+<% include partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome To portfolioAPI-Express Project!</h1>
+            <hr>
+            <p>This project was created using Node/Express.js and Bootstrap/EJS templating</p>
+            <p>p/s: While in "Today's Investment" (https://tungthecoder.com/portfolioAPI-Express/investments), 
+            you can add extra query "?date=YYYY-MM-DD" to the end of URL to modify the date you want to see investments accordingly.</p>
+            <p>For example: https://tungthecoder.com/portfolioAPI-Express/investments?date=2018-12-01
+            <br>(I have created mock data from 2018-12-01 to 2018-12-04)</p>
+            <p>p/s 2: You can also use Edit Data to see Investments made by a specific date!</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href="/portfolioAPI-Express/investments/new">Add New Investment</a>
+            </p>
+            
+            <p>
+                <a class="btn btn-primary btn-lg" href="/portfolioAPI-Express/investments">See Today's Investments</a>
+            </p>
+            
+            <p>
+                <a class="btn btn-primary btn-lg" href="/portfolioAPI-Express/investments/all">See All Investments</a>
+            </p>
+            
+            <form action="/portfolioAPI-Express/investments/edit" method="GET">
+                <div class="input-group mb-3 form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-info text-white mr-2">Choose Date to Edit Data</span>
+                    </div>
+                    <input type="date" class="form-control mr-2" name="date"  placeholder="Investment Date"/>
+                    <input type="submit" class="btn btn-primary btn-lg" value="Go to Edit Data">
+                </div>
+            </form>
+        </div>
+    </header>
+
+</div>
+<% include partials/footer %>

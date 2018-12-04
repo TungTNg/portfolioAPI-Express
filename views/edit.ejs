@@ -1,0 +1,57 @@
+<% include partials/header %>
+
+<%= investments.date %>
+
+<div class="container">
+    <table class="table" style="width:80%">
+      <thead>
+        <tr>
+          <th scope="col">Company</th>
+          <th scope="col">Date</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%  investments.forEach(function(investment) { %>  
+        <tr>
+          <th scope="row"><%= investment.company %></th>
+          <td><%= investment.date %></td>
+          <td><%= investment.quantity %></td>
+          <td><%= investment.cost %></td>
+        </tr>
+        <%  }); %>
+      </tbody>
+    </table>
+
+    <h1 class="text-center">Update an Investment</h1>
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-3">
+            <form action="/portfolioAPI-Express/investments/edit" method="POST">
+                <div class="form-group">
+                    <label for="company">Choose company to edit:</label>
+                    <select class="custom-select" name="company">
+                    <option selected>Company...</option>
+                      <%  investments.forEach(function(investment) { %>
+                      <option value="<%= investment.company %>"><%= investment.company %></option>
+                      <%  }); %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Enter investment quantity:</label>
+                    <input class="form-control" type="text" name="quantity" placeholder="quantity" />
+                </div>
+                <div class="form-group">
+                    <label for="cost">Enter investment cost:</label>
+                    <input class="form-control" type="text" name="cost" placeholder="cost" />
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary btn-block btn-lg" type="submit" value="Submit" />
+                </div>
+            </form>
+            <a href="/portfolioAPI-Express">Go Back</a>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer %>
